@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            //super.onBackPressed();
         }
     }
 
@@ -97,16 +97,20 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_linkedin) {
             Toast.makeText(this, "linkedin", Toast.LENGTH_SHORT).show();
-            webView.loadUrl("https://www.facebook.com/pg/androidmanifester/reviews/");
+            webView.setWebViewClient(new Callback());
+
+            webView.loadUrl("https://www.linkedin.com/recs/give?senderId=androidranjith");
+
         }
         else if (id == R.id.nav_google) {
             Toast.makeText(this, "google", Toast.LENGTH_SHORT).show();
-            webView.loadUrl("https://www.facebook.com/pg/androidmanifester/reviews/");
+            webView.setWebViewClient(new Callback());
+            webView.loadUrl("https://g.co/kgs/HAQDhq");
         }
         else if (id == R.id.nav_justdial) {
             Toast.makeText(this, "justdial", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
-            webView.loadUrl("https://www.justdial.com/Chennai/Android-Manifester-Near-Mari-Hotel-Saidapet/044PXX44-XX44-170105133148-D9F4_BZDET?tab=writereview");
+            webView.loadUrl("http://bit.ly/JusDialfb");
         }
         else if (id == R.id.nav_quora) {
             Toast.makeText(this, "quora", Toast.LENGTH_SHORT).show();
@@ -118,10 +122,7 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "urbanpro", Toast.LENGTH_SHORT).show();
             webView.loadUrl("https://www.urbanpro.com/providerRecommendation/fillRecommendation?branchId=613640&fromProfile=fromProfile");
         }
-        else if (id == R.id.nav_instagram) {
-            Toast.makeText(this, "instagram", Toast.LENGTH_SHORT).show();
-            webView.loadUrl("https://www.facebook.com/pg/androidmanifester/reviews/");
-        }
+
         else if (id == R.id.nav_website) {
             Toast.makeText(this, "webview", Toast.LENGTH_SHORT).show();
             webView.loadUrl("http://www.androidmanifester.com/");
