@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_facebook"
+            android:icon="@drawable/ic_icons8_facebook"
+            android:title="Facebook" />
+        <item
+            android:id="@+id/nav_linkedin"
+            android:icon="@drawable/ic_icons8_linkedin"
+            android:title="LinkedIn" />
+        <item
+            android:id="@+id/nav_google"
+            android:icon="@drawable/ic_icons8_google_plus"
+            android:title="Google+" />
+        <item
+            android:id="@+id/nav_justdial"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Just Dial" />
+
+        <item
+            android:id="@+id/nav_quora"
+            android:icon="@drawable/ic_quora"
+            android:title="Quora" />
+
+        <item
+            android:id="@+id/nav_urbanpro"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="UrbanPro" />
+
+        <item
+            android:id="@+id/nav_instagram"
+            android:icon="@drawable/ic_icons8_instagram"
+            android:title="Instagram"/>
+
+        <item
+            android:id="@+id/nav_website"
+            android:icon="@drawable/ic_androidblack"
+            android:title="Website"/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
