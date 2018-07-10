@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_linkedin) {
             Toast.makeText(this, "linkedin", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
-
+            webView.getSettings().setJavaScriptEnabled(true);
             webView.loadUrl("https://www.linkedin.com/recs/give?senderId=androidranjith");
 
         }
@@ -110,13 +110,13 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_justdial) {
             Toast.makeText(this, "justdial", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
+            webView.getSettings().setJavaScriptEnabled(true);
             webView.loadUrl("http://bit.ly/JusDialfb");
         }
         else if (id == R.id.nav_quora) {
             Toast.makeText(this, "quora", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
             webView.loadUrl("http://qr.ae/TUpgLo");
-            //https://www.quora.com/What-is-the-best-Android-training-institute-in-Chennai?share=1
         }
         else if (id == R.id.nav_urbanpro) {
             Toast.makeText(this, "urbanpro", Toast.LENGTH_SHORT).show();
