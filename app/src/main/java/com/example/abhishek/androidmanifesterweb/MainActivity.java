@@ -1,8 +1,11 @@
 package com.example.abhishek.androidmanifesterweb;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,8 +38,23 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("Contact via:");
+                builder.setPositiveButton("Email", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent=new Intent(MainActivity.this,Main2Activity.class);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("Sms", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent=new Intent(MainActivity.this,Main3Activity.class);
+                        startActivity(intent);
+                    }
+                });
+                builder.show();
             }
         });
 
@@ -56,7 +74,17 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            //super.onBackPressed();
+            final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Are you sure you want to exit?");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                 MainActivity.super.onBackPressed();
+
+                }
+            });
+            builder.setNegativeButton("No",null);
+            builder.show();
         }
     }
 
@@ -90,41 +118,41 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_facebook) {
-            Toast.makeText(this, "facebook", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Loading Facebook", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
             webView.loadUrl("https://www.facebook.com/pg/androidmanifester/reviews/");
 
         }
         else if (id == R.id.nav_linkedin) {
-            Toast.makeText(this, "linkedin", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Loading Linkedin", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
             webView.getSettings().setJavaScriptEnabled(true);
             webView.loadUrl("https://www.linkedin.com/recs/give?senderId=androidranjith");
 
         }
         else if (id == R.id.nav_google) {
-            Toast.makeText(this, "google", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Loading Google", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
             webView.loadUrl("https://g.co/kgs/HAQDhq");
         }
         else if (id == R.id.nav_justdial) {
-            Toast.makeText(this, "justdial", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Loading Justdial", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
             webView.getSettings().setJavaScriptEnabled(true);
-            webView.loadUrl("http://bit.ly/JusDialfb");
+            webView.loadUrl("https://www.justdial.com/Chennai/Android-Manifester-Near-Mari-Hotel-Saidapet/044PXX44-XX44-170105133148-D9F4_BZDET?tab=writereview");
         }
         else if (id == R.id.nav_quora) {
-            Toast.makeText(this, "quora", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Loading Quora", Toast.LENGTH_SHORT).show();
             webView.setWebViewClient(new Callback());
             webView.loadUrl("http://qr.ae/TUpgLo");
         }
         else if (id == R.id.nav_urbanpro) {
-            Toast.makeText(this, "urbanpro", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Loading Urbanpro", Toast.LENGTH_SHORT).show();
             webView.loadUrl("https://www.urbanpro.com/providerRecommendation/fillRecommendation?branchId=613640&fromProfile=fromProfile");
         }
 
         else if (id == R.id.nav_website) {
-            Toast.makeText(this, "webview", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Loading Website", Toast.LENGTH_SHORT).show();
             webView.loadUrl("http://www.androidmanifester.com/");
         }
 

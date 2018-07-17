@@ -31,6 +31,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ranjithpsundar@gmail.com" />
+        android:text="K.P.Ranjith Kumar B.E" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Founder and CEO" />
 
 </LinearLayout>
