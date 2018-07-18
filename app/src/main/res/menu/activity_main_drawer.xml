@@ -18,7 +18,7 @@
             android:title="Google+" />
         <item
             android:id="@+id/nav_justdial"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_jicontest2"
             android:title="Just Dial" />
 
         <item
@@ -28,7 +28,7 @@
 
         <item
             android:id="@+id/nav_urbanpro"
-            android:icon="@drawable/ic_urbanpronew"
+            android:icon="@drawable/ic_uicon"
             android:title="UrbanPro" />
 
 
