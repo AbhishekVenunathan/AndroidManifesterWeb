@@ -3,6 +3,7 @@ package com.example.abhishek.androidmanifesterweb;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,16 +24,25 @@ import android.view.MenuItem;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    EditText text;
+    RatingBar ratingBar;
     WebView webView;
     ProgressBar progressBar;
     boolean doubleBackToExitPressedOnce = false;
     Toolbar toolbar;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    String rev;
+    Float rat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,14 +64,18 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
+
+        text=findViewById(R.id.editText);
+        ratingBar=findViewById(R.id.ratingBar);
+        sharedPreferences=getSharedPreferences("data",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+
         webView = findViewById(R.id.webvw);
         progressBar = findViewById(R.id.progress);
         progressBar.setMax(100);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new Callback());
 
-
-       // webView.loadUrl("https://www.pinderful.net/uploads/pins/2015/08/medium/6df9afed32f65c5231ed810a00699c94.jpeg");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -142,7 +156,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -154,7 +167,7 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings) {
             return true;
         }
@@ -227,6 +240,16 @@ public class MainActivity extends AppCompatActivity
             return;
         }
         startActivity(intent);
+    }
+
+    public void review(View view) {
+        rev=text.getText().toString();
+        rat=ratingBar.getRating();
+        editor.putString("id1",rev);
+        editor.putFloat("id2",rat);
+        editor.commit();
+
+        Toast.makeText(this, rev+" "+rat, Toast.LENGTH_SHORT).show();
     }
 }
 

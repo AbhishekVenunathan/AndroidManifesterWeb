@@ -24,7 +24,31 @@
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <TextView
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#fff"
+        android:ems="10"
+        android:hint="Enter your feedback here"
+        android:inputType="textPersonName"
+        android:gravity="center"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Okay"
+        android:onClick="review"/>
+
+    <!---->TextView<!---->
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,20 +57,20 @@
         android:text="WELCOME"
         android:textColor="#f06292"
         android:textSize="23dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
 
-    <TextView
+    TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:gravity="top"
         android:paddingHorizontal="0.25in"
-        android:text="\n 1) Click on the top left corner for the list of social media websites.\n\n2) Select your preferred webiste and wait for the wepage to load.\n\n3) After the page loads, login using your existing account or create a new account.\n\n4) Rate us and write a review according to your own experience at AndroidManifester. \n"
+        android:text="\n 1) Click on the top left corner for the list of social media websites.\n\n2) Select your preferred webiste and wait for the wepage to load.\n\n3) After the page loads, login using your existing account or create a new account.\n\n4) Rate us and share your feedback on the given websites. \n"
         android:textColor="#ffff"
-        android:textSize="19dp" />
+        android:textSize="19dp"
 
-    <TextView
+    TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,6 +78,6 @@
         android:text="THANK YOU!"
         android:textColor="#f06292"
         android:textSize="23dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"<!---->
 
 </LinearLayout>
