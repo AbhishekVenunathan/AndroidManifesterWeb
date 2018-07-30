@@ -4,6 +4,9 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
+        android:icon="@android:drawable/stat_sys_phone_call_forward"
+        android:onClick="calme"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+
+        app:showAsAction="always" />
 </menu>

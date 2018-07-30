@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#42a5f5"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
@@ -15,11 +16,44 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:layout_gravity="top" />
+        android:visibility="gone" />
 
     <WebView
         android:id="@+id/webvw"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|bottom"
+        android:paddingTop="20dp"
+        android:text="WELCOME"
+        android:textColor="#f06292"
+        android:textSize="23dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="top"
+        android:paddingHorizontal="0.25in"
+        android:text="\n 1) Click on the top left corner for the list of social media websites.\n\n2) Select your preferred webiste and wait for the wepage to load.\n\n3) After the page loads, login using your existing account or create a new account.\n\n4) Rate us and write a review according to your own experience at AndroidManifester. \n"
+        android:textColor="#ffff"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="THANK YOU!"
+        android:textColor="#f06292"
+        android:textSize="23dp"
+        android:textStyle="bold" />
 
 </LinearLayout>
